@@ -1,0 +1,7 @@
+active_env: "test"
+env:
+  test:
+    base_url: "https://dummyjson.com"
+    timeout: 10
+    username: "emilys"
+    password: "emilyspass"
