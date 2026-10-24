@@ -2,6 +2,7 @@ import pytest
 from api.auth_api import AuthApi
 from utils.request_util import load_config
 
+# 得到了登录的token，
 @pytest.fixture(scope="session")
 def auth_token():
     """登录一次，整个测试会话复用"""
