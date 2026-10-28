@@ -1,6 +1,8 @@
 import allure
 from api.auth_api import AuthApi
 from utils.request_util import load_config
+from utils.extract_util import write_extract,read_extract
+
 
 @allure.feature("认证模块")
 class TestAuth:
@@ -21,6 +23,11 @@ class TestAuth:
         assert "accessToken" in body
         # 第三层：业务字段
         assert len(body["accessToken"]) > 0
+
+        #将token存入extract_util中，便于多接口调用
+        write_extract(
+            "token",body["accessToken"]
+        )
 
     @allure.story("密码错误")
     @allure.title("使用错误密码登录应失败")

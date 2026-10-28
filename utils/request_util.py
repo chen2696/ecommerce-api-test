@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 # 定位项目根目录
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#读配置文件
 def load_config():
     config_path = os.path.join(BASE_DIR, "config", "config.yaml")
     with open(config_path, "r", encoding="utf-8") as f:
