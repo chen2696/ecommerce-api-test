@@ -11,8 +11,10 @@ def write_extract(key, value):
     # 核心逻辑：如果文件已经存在，就先读出来
     if os.path.exists(EXTRACT_PATH):
         with open(EXTRACT_PATH, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f) or {}
-
+            content = yaml.safe_load(f) or {}
+            #检查content是不是字典
+            if isinstance(content, dict):
+                data = content
     # 更新数据
     data[key] = value
 

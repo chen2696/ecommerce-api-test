@@ -25,9 +25,7 @@ class TestAuth:
         assert len(body["accessToken"]) > 0
 
         #将token存入extract_util中，便于多接口调用
-        write_extract(
-            "token",body["accessToken"]
-        )
+        write_extract("token", body["accessToken"])
 
     @allure.story("密码错误")
     @allure.title("使用错误密码登录应失败")
